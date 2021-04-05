@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>photogallery</title>
+	<link rel="stylesheet" type="text/css" href="D:\shivani project\photo.css">
+	<link rel="stylesheet" type="text/css" href="E:\sublime\photo.css">
+</head>
+<body>
+	<section>
+		<ul>
+			<li class="list active" data-filter="All">All</li>
+			<li class="list" data-filter="Mobile">Mobile</li>
+			<li class="list" data-filter="Watch">Watch</li>
+			<li class="list" data-filter="Earphone">Earphone</li>
+			<li class="list" data-filter="Headphone">Headphone</li>
+			<li class="list" data-filter="Powerbank">Powerbank</li>
+			<li class="list" data-filter="Charger">Charger</li>
+			<li class="list" data-filter="Mobile Cover">Mobile Cover</li>
+		</ul>
+		<div class="product">
+		<div class="itemBox Mobile"><img src="D:\shivani project\img\v.png"></div>
+		<div class="itemBox Watch"><img src="D:\shivani project\img\u.png"></div>
+		<div class="itemBox Earphone"><img src="D:\shivani project\img\y.png"></div>
+		<div class="itemBox Headphone"><img src="D:\shivani project\img\21.png"></div>
+		<div class="itemBox Powerbank"><img src="D:\shivani project\img\x.png"></div>
+		<div class="itemBox Charger"><img src="D:\shivani project\img\w.jpg"></div>
+		<div class="itemBox Mobile Cover"><img src="D:\shivani project\img\iphone.png"></div>
+		<div class="itemBox Mobile"><img src="D:\shivani project\img\v.png"></div>
+		<div class="itemBox Watch"><img src="D:\shivani project\img\u.png"></div>
+		<div class="itemBox Earphone"><img src="D:\shivani project\img\y.png"></div>
+		<div class="itemBox Headphone"><img src="D:\shivani project\img\21.png"></div>
+		<div class="itemBox Powerbank"><img src="D:\shivani project\img\x.png"></div>
+		<div class="itemBox Charger"><img src="D:\shivani project\img\w.jpg"></div>
+		<div class="itemBox Mobile Cover"><img src="D:\shivani project\img\iphone.png"></div>
+	</section>
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.list').click(function(){
+			const value=$(this).attr('data-filter');
+			if(value=='all'){
+				$('.itemBox').show('1000');
+			}
+			else{
+				$('.itemBox').not('.'+value).hide('1000');
+				$('.itemBox').filter('.'+value).show('1000');
+			}
+		})
+		//add active class on selected item
+		$('.list').click(function(){
+			$(this).addClass('active').siblings().removeClass('active')
+		})
+	})
+</script>
+</body>
+</html>
